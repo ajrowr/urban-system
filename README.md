@@ -7,8 +7,12 @@ Quickstart (download the code w/ no repo)
 ```mydir new_project && cd new_project
 curl https://github.com/ajrowr/urban-system/tarball/master -L | tar xz --strip=1
 npm install
-yarn dev
 ```
+
+## Run dev instance
+```
+yarn dev
+````
 
 # build for production with minification
 ```npm run build```

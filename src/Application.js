@@ -15,19 +15,25 @@ let modules = {
         path: '/',
         name: 'homepage',
         component: require('@/components/Homepage').default,
-    }
+    },
+    /* YOUR MODULES HERE */
 }
 
 /* Routing URLs to modules is order-sensitive, so define the order here. */
-let moduleRouteOrder = [modules.Homepage]
+let moduleRouteOrder = [
+    modules.Homepage,
+    /* YOUR MODULES HERE */
+]
 
 /* Modular navigation lets you plug-and-play modules. */
 let navigation = {
     topbar: [
-        {module: modules.Homepage, label: 'Home'}
+        {module: modules.Homepage, label: 'Home'},
+        /* YOUR MODULES HERE */
     ],
     sidebar: [
-        {module: modules.Homepage, label: 'Home'}
+        {module: modules.Homepage, label: 'Home'},
+        /* YOUR MODULES HERE */
     ]
 }
 
