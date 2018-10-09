@@ -49,22 +49,50 @@
           
       </tbody>
       </s_table>
-    <h1>{{ msg }}</h1>
+    <h1>{{ message }}</h1>
   </div>
 </template>
 
 <script>
+
+import { Looper } from '../tstrap/Util';
+
+let $m = {
+    /* Model */
+    /* Declare all your model attribs in here, even if 
+    you're not using them yet, or Vue will get cross */
+    message: ''
+};
+let $s = null;  /* Vuex store placeholder */
+let $loops = [];
+
 export default {
-  name: 'HelloWorld',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
+    name: 'HelloWorld',
+    data: () => $m,
+    
+    beforeCreate () {
+        $m.message = 'Now get started making something cool!! :)'
+    },
+    
+    mounted () {
+        /* Populate initial values, initiate fetches, etc. */
+        /* Show a tick every 5s */
+        $loops.push(
+            new Looper(nowt => console.log('tick'))
+        ).run(5000);
+    },
+    
+    beforeDestroy () {
+        /* Tidyup */
+        Looper.stopAll($loops);
     }
-  }
 }
+
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
+<!-- If you want to add CSS across the whole app, scope it to AppContainer -->
 <style scoped>
 h1, h2 {
   font-weight: normal;

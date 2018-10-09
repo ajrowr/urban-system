@@ -14,9 +14,10 @@
         </div>
     </s_menu>
 
-<!-- Left-hand sidebar menu -->
+
     <s_grid id="app">
         <s_row>
+            <!-- Left-hand sidebar menu - remove it if you want, but the styles will require some adjustments  -->
             <s_col id="sidebar">
                 <s_menu disposition="secondary vertical fluid">
                     <t_nav_item v-for="navitem in navigation.sidebar" :link="navitem.module.path" :key="navitem.module.path">{{navitem.label}}</t_nav_item>
@@ -31,6 +32,7 @@
                 </s_menu>
             </s_col>
 
+            <!-- App content (ie. loaded module) -->
             <s_col id="content">
                 <router-view />
                 
