@@ -10,11 +10,12 @@ const config = {
 /* Wrap components in a bit of sugar to turn them into modules that allow
    self-configuration of navigation and routing.
 */
+let cmp = (c) => require('@/components/'+c).default;
 let modules = {
     Homepage: {
         path: '/',
         name: 'homepage',
-        component: require('@/components/Homepage').default,
+        component: cmp('Homepage'),
     },
     /* YOUR MODULES HERE */
 }
